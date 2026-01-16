@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>ScalpPattern 5M – Precision Trading System</title>
+<title>ScalpPattern 5M – Documentation</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
 
@@ -40,6 +40,7 @@ body{
 }
 h1{font-size:46px;line-height:1.1}
 p{color:var(--muted);margin:20px 0}
+
 .cta-btn{
   display:inline-block;
   padding:16px 30px;
@@ -64,7 +65,7 @@ p{color:var(--muted);margin:20px 0}
   60%,100%{transform:translateX(100%)}
 }
 
-/* ===== VIDEO PREVIEW ===== */
+/* VIDEO PREVIEW */
 .video-wrapper{
   position:relative;
   border-radius:18px;
@@ -91,7 +92,7 @@ p{color:var(--muted);margin:20px 0}
   margin-left:4px;
 }
 
-/* ===== FAKE CHART OVERLAY ===== */
+/* CHART OVERLAY */
 .chart-overlay{position:absolute;inset:0;z-index:2;pointer-events:none}
 .chart-overlay .grid{
   position:absolute;inset:0;
@@ -132,17 +133,13 @@ p{color:var(--muted);margin:20px 0}
   0%,100%{opacity:.8;transform:scaleY(1)}
   50%{opacity:1;transform:scaleY(1.15)}
 }
-
 .price-line{
   position:absolute;
   left:0;right:0;top:48%;
   height:2px;
   background:rgba(0,255,225,.7);
   box-shadow:0 0 12px rgba(0,255,225,.8);
-  animation:pulse 1.6s infinite alternate;
 }
-@keyframes pulse{from{opacity:.4}to{opacity:1}}
-
 .chart-label{
   position:absolute;
   top:14px;left:16px;
@@ -178,24 +175,24 @@ ul li::before{content:"•";position:absolute;left:0;color:var(--accent)}
 
 <section class="hero">
   <div>
-    <span class="badge">AUTO SCALPING • HTF SEQUENCE</span>
+    <span class="badge">AUTO SIGNAL • RULE-BASED SYSTEM</span>
     <h1>ScalpPattern <span style="color:var(--accent)">5M</span></h1>
     <p>
-      Sistem auto-scalping berbasis <b>15M candle sequence</b>,
-      equilibrium entry, dan risk terukur. Tidak menebak pasar.
+      ScalpPattern 5M adalah indikator auto-signal yang dirancang untuk
+      membaca <b>struktur harga berbasis pattern</b> dengan
+      <b>probabilistic validation</b> pada berbagai pair dan timeframe.
     </p>
-    <a href="http://lynk.id/bongkaruncle/e3qe5oy4opo5" target="_blank" class="cta-btn">
-      Unlock ScalpPattern 5M
+    <a href="http://lynk.id/bongkaruncle/e3qe5oy4opo5"
+       target="_blank"
+       class="cta-btn">
+      Access Product
     </a>
   </div>
 
-  <!-- VIDEO PREVIEW (OPEN YOUTUBE SOURCE) -->
-  <a
-    href="https://youtu.be/CrbdPg1uf4A"
-    target="_blank"
-    rel="noopener"
-    class="video-wrapper"
-  >
+  <a href="https://youtu.be/CrbdPg1uf4A"
+     target="_blank"
+     rel="noopener"
+     class="video-wrapper">
     <div class="chart-overlay">
       <div class="grid"></div>
       <div class="candles">
@@ -205,8 +202,7 @@ ul li::before{content:"•";position:absolute;left:0;color:var(--accent)}
       <div class="price-line"></div>
       <div class="chart-label">WATCH PREVIEW</div>
     </div>
-
-    <img src="https://img.youtube.com/vi/CrbdPg1uf4A/maxresdefault.jpg" alt="ScalpPattern Preview">
+    <img src="https://img.youtube.com/vi/CrbdPg1uf4A/maxresdefault.jpg" alt="Preview">
     <div class="play-btn"></div>
   </a>
 </section>
@@ -214,31 +210,37 @@ ul li::before{content:"•";position:absolute;left:0;color:var(--accent)}
 <div class="card">
   <h2>System Architecture</h2>
   <ul>
-    <li>HTF candle sequence (C5 → C0)</li>
-    <li>Midpoint equilibrium entry</li>
-    <li>Fixed TP & RR-based SL</li>
-    <li>One-trade-at-a-time logic</li>
-    <li>Auto exit: TP / SL / Cancel</li>
+    <li>Pattern detection module berbasis rule internal</li>
+    <li>Probabilistic filter untuk menyaring kondisi low-quality</li>
+    <li>Multi-timeframe context analysis (HTF → LTF)</li>
+    <li>State-based logic untuk mencegah repaint</li>
+    <li>Signal hanya muncul saat semua rule terpenuhi</li>
   </ul>
 </div>
 
 <div class="card">
-  <h2>Designed For</h2>
+  <h2>Intended Usage</h2>
   <ul>
-    <li>5M scalper & intraday trader</li>
-    <li>Trader anti repaint & noise</li>
-    <li>Execution-focused system user</li>
+    <li>Rule-based trading workflow</li>
+    <li>Multi pair & multi timeframe monitoring</li>
+    <li>Auto atau semi-automated execution</li>
   </ul>
 </div>
 
 <div class="footer-cta">
-  <h2>Less Noise. More Precision.</h2>
-  <p>No martingale. No signal spam. Just structure.</p>
-  <a href="http://lynk.id/bongkaruncle/e3qe5oy4opo5" target="_blank" class="cta-btn">
-    Access ScalpPattern 5M
-  </a>
+  <h2>Structured Logic. Controlled Execution.</h2>
+  <p>Indicator designed for structured decision-making.</p>
+  <p style="margin-top:40px;font-size:13px;opacity:.5">
+    © <span id="year"></span> forexemas. All rights reserved.
+  </p>
 </div>
 
 </div>
+
+<script>
+  document.getElementById("year").textContent =
+    new Date().getFullYear();
+</script>
+
 </body>
 </html>
