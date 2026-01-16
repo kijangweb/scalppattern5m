@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>ScalpPattern 5M – Precision Trading System</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+<style>
+:root{
+  --bg:#05070c;
+  --card:#0b1020;
+  --text:#e5e7eb;
+  --muted:#9ca3af;
+  --accent:#00ffe1;
+  --accent2:#3b82f6;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{
+  font-family:Inter,sans-serif;
+  background:radial-gradient(1200px 600px at top,#0b122a,var(--bg));
+  color:var(--text);
+}
+.container{max-width:1100px;margin:auto;padding:80px 20px}
+.hero{
+  display:grid;
+  grid-template-columns:1.2fr 1fr;
+  gap:50px;
+  align-items:center;
+}
+.badge{
+  display:inline-block;
+  padding:6px 14px;
+  border-radius:999px;
+  border:1px solid rgba(0,255,225,.4);
+  color:var(--accent);
+  font-size:13px;
+  margin-bottom:16px;
+}
+h1{font-size:46px;line-height:1.1}
+p{color:var(--muted);margin:20px 0}
+.cta-btn{
+  display:inline-block;
+  padding:16px 30px;
+  background:linear-gradient(135deg,var(--accent),var(--accent2));
+  color:#020617;
+  font-weight:700;
+  border-radius:14px;
+  text-decoration:none;
+  position:relative;
+  overflow:hidden;
+}
+.cta-btn::after{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:linear-gradient(120deg,transparent,rgba(255,255,255,.6),transparent);
+  transform:translateX(-100%);
+  animation:shine 2.5s infinite;
+}
+@keyframes shine{
+  0%{transform:translateX(-100%)}
+  60%,100%{transform:translateX(100%)}
+}
+
+/* ===== VIDEO PREVIEW ===== */
+.video-wrapper{
+  position:relative;
+  border-radius:18px;
+  overflow:hidden;
+  border:1px solid rgba(255,255,255,.1);
+}
+.video-wrapper img{width:100%;display:block}
+.play-btn{
+  position:absolute;
+  top:50%;left:50%;
+  transform:translate(-50%,-50%);
+  width:80px;height:80px;
+  border-radius:50%;
+  background:rgba(0,0,0,.6);
+  display:flex;align-items:center;justify-content:center;
+  box-shadow:0 0 40px rgba(0,255,225,.6);
+  z-index:3;
+}
+.play-btn::before{
+  content:"";
+  border-style:solid;
+  border-width:14px 0 14px 22px;
+  border-color:transparent transparent transparent #fff;
+  margin-left:4px;
+}
+
+/* ===== FAKE CHART OVERLAY ===== */
+.chart-overlay{position:absolute;inset:0;z-index:2;pointer-events:none}
+.chart-overlay .grid{
+  position:absolute;inset:0;
+  background:
+    linear-gradient(rgba(255,255,255,.04) 1px,transparent 1px),
+    linear-gradient(90deg,rgba(255,255,255,.04) 1px,transparent 1px);
+  background-size:40px 40px;
+}
+.candles{
+  position:absolute;
+  bottom:15%;left:8%;right:8%;
+  height:60%;
+  display:flex;
+  align-items:flex-end;
+  gap:10px;
+}
+.candles span{
+  width:8%;
+  border-radius:3px;
+  background:linear-gradient(180deg,#00ffe1,#3b82f6);
+  animation:candle 2.2s infinite ease-in-out;
+}
+.candles span:nth-child(even){
+  background:linear-gradient(180deg,#ef4444,#f97316)
+}
+.candles span:nth-child(1){height:40%}
+.candles span:nth-child(2){height:65%}
+.candles span:nth-child(3){height:50%}
+.candles span:nth-child(4){height:75%}
+.candles span:nth-child(5){height:55%}
+.candles span:nth-child(6){height:70%}
+.candles span:nth-child(7){height:45%}
+.candles span:nth-child(8){height:80%}
+.candles span:nth-child(9){height:60%}
+.candles span:nth-child(10){height:72%}
+
+@keyframes candle{
+  0%,100%{opacity:.8;transform:scaleY(1)}
+  50%{opacity:1;transform:scaleY(1.15)}
+}
+
+.price-line{
+  position:absolute;
+  left:0;right:0;top:48%;
+  height:2px;
+  background:rgba(0,255,225,.7);
+  box-shadow:0 0 12px rgba(0,255,225,.8);
+  animation:pulse 1.6s infinite alternate;
+}
+@keyframes pulse{from{opacity:.4}to{opacity:1}}
+
+.chart-label{
+  position:absolute;
+  top:14px;left:16px;
+  font-size:12px;
+  color:var(--accent);
+  background:rgba(0,0,0,.45);
+  padding:6px 10px;
+  border-radius:6px;
+}
+
+.card{
+  background:linear-gradient(180deg,rgba(255,255,255,.04),rgba(255,255,255,.01));
+  border:1px solid rgba(255,255,255,.08);
+  border-radius:18px;
+  padding:32px;
+  margin-top:40px;
+}
+
+ul{list-style:none;margin-top:16px}
+ul li{margin-bottom:12px;color:var(--muted);padding-left:18px;position:relative}
+ul li::before{content:"•";position:absolute;left:0;color:var(--accent)}
+
+.footer-cta{text-align:center;margin-top:90px}
+
+@media(max-width:900px){
+  .hero{grid-template-columns:1fr}
+}
+</style>
+</head>
+
+<body>
+<div class="container">
+
+<section class="hero">
+  <div>
+    <span class="badge">AUTO SCALPING • HTF SEQUENCE</span>
+    <h1>ScalpPattern <span style="color:var(--accent)">5M</span></h1>
+    <p>
+      Sistem auto-scalping berbasis <b>15M candle sequence</b>,
+      equilibrium entry, dan risk terukur. Tidak menebak pasar.
+    </p>
+    <a href="http://lynk.id/bongkaruncle/e3qe5oy4opo5" target="_blank" class="cta-btn">
+      Unlock ScalpPattern 5M
+    </a>
+  </div>
+
+  <!-- VIDEO PREVIEW (OPEN YOUTUBE SOURCE) -->
+  <a
+    href="https://youtu.be/CrbdPg1uf4A"
+    target="_blank"
+    rel="noopener"
+    class="video-wrapper"
+  >
+    <div class="chart-overlay">
+      <div class="grid"></div>
+      <div class="candles">
+        <span></span><span></span><span></span><span></span><span></span>
+        <span></span><span></span><span></span><span></span><span></span>
+      </div>
+      <div class="price-line"></div>
+      <div class="chart-label">WATCH PREVIEW</div>
+    </div>
+
+    <img src="https://img.youtube.com/vi/CrbdPg1uf4A/maxresdefault.jpg" alt="ScalpPattern Preview">
+    <div class="play-btn"></div>
+  </a>
+</section>
+
+<div class="card">
+  <h2>System Architecture</h2>
+  <ul>
+    <li>HTF candle sequence (C5 → C0)</li>
+    <li>Midpoint equilibrium entry</li>
+    <li>Fixed TP & RR-based SL</li>
+    <li>One-trade-at-a-time logic</li>
+    <li>Auto exit: TP / SL / Cancel</li>
+  </ul>
+</div>
+
+<div class="card">
+  <h2>Designed For</h2>
+  <ul>
+    <li>5M scalper & intraday trader</li>
+    <li>Trader anti repaint & noise</li>
+    <li>Execution-focused system user</li>
+  </ul>
+</div>
+
+<div class="footer-cta">
+  <h2>Less Noise. More Precision.</h2>
+  <p>No martingale. No signal spam. Just structure.</p>
+  <a href="http://lynk.id/bongkaruncle/e3qe5oy4opo5" target="_blank" class="cta-btn">
+    Access ScalpPattern 5M
+  </a>
+</div>
+
+</div>
+</body>
+</html>
